@@ -5,25 +5,26 @@ const initialState = {
     apiData: {}
 }
 
-export const dataSlice = createSlice({
+export const dataSlice = createSlice ({
     name: 'data',
     initialState,
     reducers: {
         setData: (state, action) => {
-            return {...state, apiData : action.payload}
+            return {...state, apiData: action.payload}
         },
         clearData: () => {
-            return initialState
+            return initialState 
         },
         inputId: (state, action) => {
-            return { ...state, objectId: action.payload }
+            return {...state,objectId: action.payload}
         },
         incrementId: (state) => {
-            return { ...state, objectId: state.objectId + 1 }
+            return {...state, objectId: state.objectId + 1}
         },
-        decrementId: (state) => {
-            return { ...state, objectId: state.objectId - 1 }
+        decrement: (state) => {
+            return {...state, objectId: state.objectId - 1}
         }
+
     }
 })
 
